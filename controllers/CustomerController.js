@@ -59,20 +59,6 @@ function saveCustomer(id, name, address, salary) {
     return true;
 }
 
-// $("#txtCustomerId0").on('keyup', function (eObj) {
-//     if (eObj.key == "Enter") {
-//         let customer = searchCustomer($(this).val());
-//         if (customer != null) {
-//             $("#txtCustomerId0").val(customer.getCustomerID());
-//             $("#txtCustomerName0").val(customer.getCustomerName());
-//             $("#txtCustomerAddress0").val(customer.getCustomerAddress());
-//             $("#txtCustomerSalary0ry").val(customer.getCustomerSalary());
-//         } else {
-//             clearCustomer();
-//         }
-//     }
-// });
-
 function searchCustomer(id) {
     for (var i in customerTable) {
         if (customerTable[i].getCustomerID() == id) return customerTable[i];
@@ -138,7 +124,7 @@ function loadAllCustomersToTable() {
 }
 
 // Reg Ex
-let cusIdRegEx = /^(C00-)[0-9]{1,3}$/;
+let cusIdRegEx = /^(C)[0-9]{1,3}$/;
 let cusNameRegEx = /^[A-z| ]{5,20}$/;
 let cusAddressRegEx = /^[A-z| |0-9|,]{5,}$/;
 let cusSalaryRegEx = /^\d{1,7}(?:\.\d{0,2})?$/;
@@ -179,28 +165,28 @@ $('#txtCustomerId0,#txtCustomerName0,#txtCustomerAddress0,#txtCustomerSalary0').
                     $('#txtCustomerSalary0').css('border', '2px solid red');
                     $('#lblcussalary').text("Required field. Pattern:-(100.00 or 100)");
                     $('#lblcussalary').css('color', 'red');
-                    $('#lblcussalary').css('font-size', '8px');
+                    $('#lblcussalary').css('font-size', '9px');
                     disableButton();
                 }
             } else {
                 $('#txtCustomerAddress0').css('border', '2px solid red');
                 $('#lblcusaddress').text("Required field. Minimum 5");
                 $('#lblcusaddress').css('color', 'red');
-                $('#lblcusaddress').css('font-size', '8px');
+                $('#lblcusaddress').css('font-size', '9px');
                 disableButton();
             }
         } else {
             $('#txtCustomerName0').css('border', '2px solid red');
             $('#lblcusname').text("Required field. 5 to 20 characters Allowed.");
             $('#lblcusname').css('color', 'red');
-            $('#lblcusname').css('font-size', '8px');
+            $('#lblcusname').css('font-size', '9px');
             disableButton();
         }
     } else {
         $('#txtCustomerId0').css('border', '2px solid red');
-        $('#lblcusid').text("Required field. Pattern:-(C00-000)");
+        $('#lblcusid').text("Required field. Pattern:-(Cxxx)");
         $('#lblcusid').css('color', 'red');
-        $('#lblcusid').css('font-size', '8px');
+        $('#lblcusid').css('font-size', '9px');
         disableButton();
     }
 });

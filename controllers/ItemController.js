@@ -123,7 +123,7 @@ function deleteItem(code) {
 }
 
 // Reg Ex
-let codeRegEx = /^(I00-)[0-9]{1,3}$/;
+let codeRegEx = /^(I)[0-9]{1,3}$/;
 let descRegEx = /^[A-z| |0-9]{1,25}$/;
 let qtyRegEx = /^[0-9]{1,4}$/;
 let priceRegEx = /^\d{1,4}(?:\.\d{0,2})?$/;
@@ -164,28 +164,28 @@ $('#txtItemCode0,#txtDescription0,#txtQty0,#txtUnitPrice0').on('keyup', function
                     $('#txtUnitPrice0').css('border', '2px solid red');
                     $('#lblprice').text("Required field. Pattern:-(100.00 or 100)");
                     $('#lblprice').css('color', 'red');
-                    $('#lblprice').css('font-size', '8px');
+                    $('#lblprice').css('font-size', '9px');
                     disableButton2();
                 }
             } else {
                 $('#txtQty0').css('border', '2px solid red');
                 $('#lblqty').text("Required field. Maximum 5");
                 $('#lblqty').css('color', 'red');
-                $('#lblqty').css('font-size', '8px');
+                $('#lblqty').css('font-size', '9px');
                 disableButton2();
             }
         } else {
             $('#txtDescription0').css('border', '2px solid red');
             $('#lbldescription').text("Required field. characters and numbers Allowed.");
             $('#lbldescription').css('color', 'red');
-            $('#lbldescription').css('font-size', '8px');
+            $('#lbldescription').css('font-size', '9px');
             disableButton2();
         }
     } else {
         $('#txtItemCode0').css('border', '2px solid red');
-        $('#lblitemcode').text("Required field. Pattern:-(I00-000)");
+        $('#lblitemcode').text("Required field. Pattern:-(Ixxx)");
         $('#lblitemcode').css('color', 'red');
-        $('#lblitemcode').css('font-size', '8px');
+        $('#lblitemcode').css('font-size', '9px');
         disableButton2();
     }
 });
